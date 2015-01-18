@@ -1,4 +1,9 @@
 {
+  "name": "weapon-evolution-v2",
+  "version": "2.0.0",
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
     "lodash": "^2.4.1"
   }
