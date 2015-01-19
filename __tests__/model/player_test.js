@@ -14,7 +14,6 @@ describe('Player', function() {
     });
 
     describe('#attack()', function() {
-
         it('attack reduce hp', function() {
             var result = katherine.attack(stefan);
             expect(stefan.hp).toBe(92);
@@ -27,7 +26,6 @@ describe('Player', function() {
     });
 
     describe('#isAlive()', function() {
-
         it('should return true when hp greater than o', function() {
             var player = new Player('player', 1);
             expect(player.isAlive()).toBe(true);
@@ -41,6 +39,18 @@ describe('Player', function() {
         it('should return true when hp less than o', function() {
             var player = new Player('player', -1);
             expect(player.isAlive()).toBe(false);
+        });
+    });
+
+    describe('#be_attacked()', function() {
+        it('should return attacker ap', function() {
+            var result = stefan.be_attacked(10);
+            expect(result).toBe(10);
+        });
+
+        it('should get the hp that has been reduce', function() {
+            var result = stefan.be_attacked(10);
+            expect(stefan.hp).toBe(90);
         });
     });
 });
