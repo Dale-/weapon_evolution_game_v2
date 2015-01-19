@@ -6,6 +6,10 @@ function Player(name, hp, ap) {
     this.ap = _.isUndefined(ap) ? 10 : ap;
 }
 
+Player.prototype.isAlive = function() {
+    return this.hp > 0;
+};
+
 Player.prototype.be_attacked = function(ap) {
     this.hp -= ap;
     return ap;
