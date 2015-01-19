@@ -14,12 +14,12 @@ describe('Player', function() {
     });
 
     describe('#attack()', function() {
-        it('attack reduce hp', function() {
+        it('should return attack reduce hp', function() {
             var result = katherine.attack(stefan);
             expect(stefan.hp).toBe(92);
         });
 
-        it('player vs player attack string', function() {
+        it('should return player vs player attack string', function() {
             var result = katherine.attack(stefan);
             expect(result).toBe('Katherine攻击了Stefan，Stefan受到了8点伤害，Stefan剩余生命：92');
         });
@@ -52,5 +52,19 @@ describe('Player', function() {
             var result = stefan.be_attacked(10);
             expect(stefan.hp).toBe(90);
         });
+    });
+
+    describe('#do_attack()', function() {
+        it('should return the object that has one perproty of damage', function() {
+            var result = katherine.do_attack(stefan);
+            expect(result.damage).toBe(8);
+        });
+    });
+
+    describe('#attack_string()', function() {
+       it('should return player vs player attack string', function() {
+           var result = katherine.attack_string(stefan, {damage: 8});
+           expect(result).toBe('Katherine攻击了Stefan，Stefan受到了8点伤害，Stefan剩余生命：100');
+       });
     });
 });
