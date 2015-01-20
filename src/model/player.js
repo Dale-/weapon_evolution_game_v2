@@ -32,7 +32,7 @@ Player.prototype.be_attacked = function(ap) {
 };
 
 Player.prototype.do_attack = function(defencer) {
-    var damage = defencer.be_attacked(this.ap);
+    var damage = defencer.be_attacked(this.ap - defencer.armor.dp);
     return {
         damage: damage
     };

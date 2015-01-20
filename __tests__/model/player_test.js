@@ -1,4 +1,5 @@
 jest.dontMock('../../src/model/player');
+jest.dontMock('../../src/model/soldier');
 jest.dontMock('../../src/model/armor');
 jest.dontMock('../../src/model/no-armor');
 
@@ -37,6 +38,12 @@ describe('Player', function() {
         it('should return player vs player attack string', function() {
             var result = katherine.attack(stefan);
             expect(result).toBe('平民Katherine攻击了平民Stefan，Stefan受到了8点伤害，Stefan剩余生命：92');
+        });
+
+        it('should return player vs soldier attack string', function() {
+            var result = katherine.attack(caroline);
+            expect(result).toBe('平民Katherine攻击了士兵Caroline，Caroline用Armor防御了2点伤害，' +
+                                'Caroline受到了6点伤害，Caroline剩余生命：94');
         });
     });
 
