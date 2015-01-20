@@ -7,7 +7,7 @@ function Armor(name, dp) {
 
 Armor.prototype.armor_string = function() {
     return '用' + this.name +
-           '防御了' + this.dp + '点伤害';
+           '防御了' + this.dp + '点伤害，';
 };
 
 module.exports = Armor;

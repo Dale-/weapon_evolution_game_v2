@@ -21,4 +21,11 @@ describe('Armor', function() {
             expect(armor.dp).toBe(8);
         });
     });
+
+    describe('#armor_string()', function() {
+        it('should return an empty string', function() {
+            var result = armor.armor_string();
+            expect(result).toBe('用sun-ring防御了8点伤害，');
+        });
+    });
 });
