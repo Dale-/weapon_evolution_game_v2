@@ -41,11 +41,10 @@ describe('Soldier', function() {
     describe('#attack_string()', function() {
         it('should return player vs player attack string', function() {
 
-            var result = katherine.attack_string(stefan, {damage: 8});
-
             weapon.weapon_string = jest.genMockFn();
             weapon.weapon_string.mockReturnValue('用Weapon');
 
+            var result = katherine.attack_string(stefan, {damage: 8});
             expect(result).toBe('士兵Katherine用Weapon攻击了Stefan，Stefan受到了8点伤害，Stefan剩余生命：100');
         });
     });
