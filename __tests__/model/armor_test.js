@@ -11,17 +11,13 @@ describe('Armor', function() {
     });
 
     describe('#name', function() {
-
         it('should return an incoming string', function() {
-
             expect(armor.name).toBe('sun-ring');
         });
     });
 
     describe('#dp', function() {
-
         it('should return an incoming dp', function() {
-
             expect(armor.dp).toBe(8);
         });
     });
