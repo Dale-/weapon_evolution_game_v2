@@ -20,6 +20,13 @@ Soldier.prototype.origin_damage = function(ap) {
     return ap - this.armor.dp;
 };
 
+Soldier.prototype.do_attack = function(defencer) {
+    var damage = defencer.be_attacked(this.getAP() - defencer.armor.dp);
+    return {
+        damage: damage
+    };
+};
+
 Soldier.prototype.attack_string = function(defender, attack_result) {
     return this.role() + this.name + this.weapon.weapon_string() + '攻击了' +
            defender.role() + defender.name + '，' + defender.armor.armor_string(defender.name) +
