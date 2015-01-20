@@ -15,6 +15,10 @@ Player.prototype.origin_damage = function() {
   return this.ap;
 };
 
+Player.prototype.getAP = function(){
+    return this.ap;
+};
+
 Player.prototype.isAlive = function() {
     return this.hp > 0;
 };

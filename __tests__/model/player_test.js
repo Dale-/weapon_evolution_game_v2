@@ -32,6 +32,13 @@ describe('Player', function() {
        }) ;
     });
 
+    describe('#getAP()', function() {
+       it('should return one player of ap', function() {
+           var result = stefan.getAP();
+           expect(result).toBe(10);
+       });
+    });
+
     describe('#isAlive()', function() {
         it('should return true when hp greater than o', function() {
             var player = new Player('player', 1);
