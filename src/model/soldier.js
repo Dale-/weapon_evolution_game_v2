@@ -20,10 +20,10 @@ Soldier.prototype.origin_damage = function(ap) {
     return ap - this.armor.dp;
 };
 
-Soldier.prototype.attack_string = function(player, attack_result) {
+Soldier.prototype.attack_string = function(defender, attack_result) {
     return this.role() + this.name + this.weapon.weapon_string() + '攻击了' +
-           player.name + '，' + player.name + '受到了' +
-           attack_result.damage + '点伤害，' + player.name + '剩余生命：' + player.hp;
+           defender.role() + defender.name + '，' + defender.armor.armor_string(defender.name) +
+           defender.name + '受到了' + attack_result.damage + '点伤害，' + defender.name + '剩余生命：' + defender.hp;
 };
 
 Soldier.prototype.role = function(ap) {

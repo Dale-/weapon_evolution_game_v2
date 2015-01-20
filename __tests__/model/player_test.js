@@ -98,10 +98,16 @@ describe('Player', function() {
     });
 
     describe('#attack_string()', function() {
-       it('should return player vs player attack string', function() {
-           var result = katherine.attack_string(stefan, {damage: 8});
-           expect(result).toBe('平民Katherine攻击了平民Stefan，Stefan受到了8点伤害，Stefan剩余生命：100');
-       });
+        it('should return player vs player attack string', function() {
+            var result = katherine.attack_string(stefan, {damage: 8});
+            expect(result).toBe('平民Katherine攻击了平民Stefan，Stefan受到了8点伤害，Stefan剩余生命：100');
+        });
+
+        it('should return player vs soldier attack string', function() {
+            var result = katherine.attack_string(caroline, {damage: 6});
+            expect(result).toBe('平民Katherine攻击了士兵Caroline，Caroline用Armor防御了2点伤害，' +
+            'Caroline受到了6点伤害，Caroline剩余生命：100');
+        });
     });
 
     describe('#role()', function() {
