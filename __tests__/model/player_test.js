@@ -21,20 +21,20 @@ describe('Player', function() {
 
         it('should return player vs player attack string', function() {
             var result = katherine.attack(stefan);
-            expect(result).toBe('Katherine攻击了Stefan，Stefan受到了8点伤害，Stefan剩余生命：92');
+            expect(result).toBe('平民Katherine攻击了Stefan，Stefan受到了8点伤害，Stefan剩余生命：92');
         });
     });
 
     describe('#origin_damage()', function() {
        it('should return one number of origin_damage', function() {
-           var result = stefan.origin_damage();
+           var result = stefan.origin_damage(10);
            expect(result).toBe(10);
        }) ;
     });
 
     describe('#getAP()', function() {
        it('should return one player of ap', function() {
-           var result = stefan.getAP();
+           var result = stefan.getAP(10);
            expect(result).toBe(10);
        });
     });
@@ -78,7 +78,7 @@ describe('Player', function() {
     describe('#attack_string()', function() {
        it('should return player vs player attack string', function() {
            var result = katherine.attack_string(stefan, {damage: 8});
-           expect(result).toBe('Katherine攻击了Stefan，Stefan受到了8点伤害，Stefan剩余生命：100');
+           expect(result).toBe('平民Katherine攻击了Stefan，Stefan受到了8点伤害，Stefan剩余生命：100');
        });
     });
 
