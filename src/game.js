@@ -9,7 +9,7 @@ Game.prototype.fight = function() {
     while(this.attacker.isAlive() && this.defender.isAlive()) {
         this.logger.log(this.attacker.attack(this.defender));
         if(this.defender.isAlive()) {
-            this.logger.log(this.defender.attack(this.attacker));
+            this.logger.log(this.defender.attack(this.attacker) + '\n');
         }
     }
     if(this.attacker.isAlive()) {
