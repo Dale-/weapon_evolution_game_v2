@@ -1,16 +1,31 @@
 jest.dontMock('../../src/model/player');
+jest.dontMock('../../src/model/armor');
+jest.dontMock('../../src/model/no-armor');
 
 describe('Player', function() {
 
     var Player;
+    var Soldier;
+    var Armor;
+    var Weapon;
     var stefan;
     var katherine;
+    var caroline;
+    var armor;
+    var weapon;
 
     beforeEach(function() {
 
         Player = require('../../src/model/player');
+        Soldier = require('../../src/model/soldier');
+        Weapon = require('../../src/model/weapon');
+        Armor = require('../../src/model/armor');
+
+        armor = new Armor('Armor', 2);
+        weapon = new Weapon('Weapon', 2);
         stefan = new Player('Stefan', 100, 10);
         katherine = new Player('Katherine', 100, 8);
+        caroline = new Soldier('Caroline', 100, 6, weapon, armor);
     });
 
     describe('#attack()', function() {
@@ -21,7 +36,7 @@ describe('Player', function() {
 
         it('should return player vs player attack string', function() {
             var result = katherine.attack(stefan);
-            expect(result).toBe('平民Katherine攻击了Stefan，Stefan受到了8点伤害，Stefan剩余生命：92');
+            expect(result).toBe('平民Katherine攻击了平民Stefan，Stefan受到了8点伤害，Stefan剩余生命：92');
         });
     });
 
@@ -78,7 +93,7 @@ describe('Player', function() {
     describe('#attack_string()', function() {
        it('should return player vs player attack string', function() {
            var result = katherine.attack_string(stefan, {damage: 8});
-           expect(result).toBe('平民Katherine攻击了Stefan，Stefan受到了8点伤害，Stefan剩余生命：100');
+           expect(result).toBe('平民Katherine攻击了平民Stefan，Stefan受到了8点伤害，Stefan剩余生命：100');
        });
     });
 

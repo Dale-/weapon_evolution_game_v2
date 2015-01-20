@@ -1,5 +1,5 @@
-var NoWeapon = require('./weapon');
-var NoArmor = require('./armor');
+var NoWeapon = require('./no-weapon');
+var NoArmor = require('./no-armor');
 var Player = require('./player');
 
 function Soldier(name, hp, ap, weapon, armor) {

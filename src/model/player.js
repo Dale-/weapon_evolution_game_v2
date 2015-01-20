@@ -1,10 +1,12 @@
 var _ = require('lodash');
+var NoArmor = require('./no-armor');
 
-function Player(name, hp, ap) {
+function Player(name, hp, ap, armor) {
 
     this.name = name;
     this.hp = _.isUndefined(hp) ? 100 : hp;
     this.ap = _.isUndefined(ap) ? 10 : ap;
+    this.armor = armor ? armor : new NoArmor();
 }
 
 Player.prototype.attack = function(player) {
@@ -36,10 +38,11 @@ Player.prototype.do_attack = function(defencer) {
     };
 };
 
-Player.prototype.attack_string = function(player, attack_result) {
-    return this.role() + this.name + '攻击了' + player.name + '，' +
-           player.name + '受到了' + attack_result.damage + '点伤害，' +
-           player.name + '剩余生命：' + player.hp;
+Player.prototype.attack_string = function(defender, attack_result) {
+    return this.role() + this.name + '攻击了' + defender.role() +
+           defender.name + '，' + defender.armor.armor_string(defender.name) +
+           defender.name + '受到了' + attack_result.damage + '点伤害，' +
+           defender.name + '剩余生命：' + defender.hp;
 };
 
 Player.prototype.role = function() {
