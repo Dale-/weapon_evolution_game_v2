@@ -33,6 +33,4 @@ Player.prototype.attack = function(player) {
     return this.attack_string(player, attack_result);
 };
 
-
-
 module.exports = Player;

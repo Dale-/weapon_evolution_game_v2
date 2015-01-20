@@ -67,4 +67,11 @@ describe('Player', function() {
            expect(result).toBe('Katherine攻击了Stefan，Stefan受到了8点伤害，Stefan剩余生命：100');
        });
     });
+
+    describe('#role()', function() {
+       it('should return the string that equal 平民', function() {
+           var result = katherine.role();
+           expect(result).toBe('平民');
+       });
+    });
 });
