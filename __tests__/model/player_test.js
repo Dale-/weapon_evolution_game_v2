@@ -25,6 +25,13 @@ describe('Player', function() {
         });
     });
 
+    describe('#origin_damage()', function() {
+       it('should return one number of origin_damage', function() {
+           var result = stefan.origin_damage();
+           expect(result).toBe(10);
+       }) ;
+    });
+
     describe('#isAlive()', function() {
         it('should return true when hp greater than o', function() {
             var player = new Player('player', 1);
