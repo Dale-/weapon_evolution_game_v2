@@ -24,8 +24,8 @@ Player.prototype.be_attacked = function(ap) {
     return ap;
 };
 
-Player.prototype.do_attack = function(player) {
-    var damage = player.be_attacked(this.ap);
+Player.prototype.do_attack = function(defencer) {
+    var damage = defencer.be_attacked(this.ap);
     return {
         damage: damage
     };
