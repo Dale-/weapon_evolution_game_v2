@@ -33,4 +33,8 @@ Player.prototype.attack = function(player) {
     return this.attack_string(player, attack_result);
 };
 
+Player.prototype.role = function() {
+  return '平民';
+};
+
 module.exports = Player;
