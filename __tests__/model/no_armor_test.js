@@ -3,7 +3,7 @@ jest.dontMock('../../src/model/no-armor');
 describe('NoArmor', function() {
 
     var NoArmor;
-    var noArmor
+    var noArmor;
 
     beforeEach(function() {
         NoArmor = require('../../src/model/no-armor');
