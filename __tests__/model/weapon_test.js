@@ -24,7 +24,7 @@ describe('Weapon', function() {
        it('should return object of effect', function() {
 
            Math.random = jest.genMockFn();
-           Math.random.mockReturnValue(0.9);
+           Math.random.mockReturnValue(0.99);
 
            var weapon = Weapon.all()[3];
            var result = weapon.triggerEffect();
