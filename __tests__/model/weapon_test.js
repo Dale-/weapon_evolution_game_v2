@@ -1,4 +1,5 @@
 jest.dontMock('../../src/model/weapon');
+jest.dontMock('../../src/effect/no-effect');
 
 describe('Weapon', function() {
 
@@ -9,7 +10,6 @@ describe('Weapon', function() {
     });
 
     describe('#weapon_string()', function() {
-
        it('should return one string of using weapon', function() {
 
            var weapon = new Weapon('weapon');
@@ -19,8 +19,21 @@ describe('Weapon', function() {
        });
     });
 
-    describe('.all()', function() {
+    describe('#triggerEffect()', function() {
 
+       it('should return object of effect', function() {
+
+           Math.random = jest.genMockFn();
+           Math.random.mockReturnValue(0.9);
+
+           var weapon = Weapon.all()[3];
+           var result = weapon.triggerEffect();
+
+           expect(result).toEqual({});
+       }) ;
+    });
+
+    describe('.all()', function() {
         it('should return one weapon object', function() {
 
             var result = Weapon.all()[0];
