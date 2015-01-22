@@ -41,7 +41,7 @@ Player.prototype.do_attack = function(defencer) {
 
 Player.prototype.calculate_impacted_damage = function(ap, attack_impact) {
   var damage = this.origin_damage(ap);
-  if(attack_impact) {
+  if(attack_impact && attack_impact.is_damage) {
       return attack_impact.impact(damage);
   }
   return damage;

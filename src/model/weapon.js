@@ -3,10 +3,10 @@ var NoEffect = require('../effect/no-effect');
 var DeadlyAttackEffect = require('../effect/deadly-attack-effect');
 
 
-function Weapon(name, ap) {
+function Weapon(name, ap, effects) {
     this.name = name;
     this.ap = _.isUndefined(ap) ? 1 : ap;
-    this.effect = [];
+    this.effect = effects;
 }
 
 Weapon.prototype.weapon_string = function() {
@@ -16,8 +16,7 @@ Weapon.prototype.weapon_string = function() {
 Weapon.prototype.triggerEffect = function() {
     var size = this.effect.length + 1;
     var region = 1 / size;
-    //var random = Math.random();
-    var random = 0.9;
+    var random = Math.random();
     var index = 0;
 
     for(var i = 1; i <= size; i++) {
@@ -29,7 +28,7 @@ Weapon.prototype.triggerEffect = function() {
     if(index === this.effect.length) {
         return new NoEffect().trigger();
     } else {
-        return this.effect[i].trigger();
+        return this.effect[index].trigger();
     }
 };
 

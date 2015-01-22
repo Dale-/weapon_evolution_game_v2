@@ -1,6 +1,6 @@
-var NoWeapon = require('./no-weapon');
-var NoArmor = require('./no-armor');
 var Player = require('./player');
+var NoArmor = require('./no-armor');
+var NoWeapon = require('./no-weapon');
 
 function Soldier(name, hp, ap, weapon, armor) {
 
@@ -22,7 +22,7 @@ Soldier.prototype.origin_damage = function(ap) {
 
 Soldier.prototype.do_attack = function(defencer) {
     var attack_impact = this.weapon.triggerEffect();
-    var damage = defencer.be_attacked(this.getAP());
+    var damage = defencer.be_attacked(this.getAP(), attack_impact);
     return {
         damage: damage,
         attack_impact: attack_impact
@@ -30,9 +30,8 @@ Soldier.prototype.do_attack = function(defencer) {
 };
 
 Soldier.prototype.attack_string = function(defender, attack_result) {
-    return this.role() + this.name + this.weapon.weapon_string() + '攻击了' +
-           defender.role() + defender.name + '，' + defender.armor.armor_string(defender.name) +
-           attack_result.attack_impact.effect_string(this.name) +
+    return this.role() + this.name + this.weapon.weapon_string() + '攻击了' + defender.role() + defender.name +
+           '，' + defender.armor.armor_string(defender.name) + attack_result.attack_impact.effect_string(this.name) +
            defender.name + '受到了' + attack_result.damage + '点伤害，' + defender.name + '剩余生命：' + defender.hp;
 };
 
