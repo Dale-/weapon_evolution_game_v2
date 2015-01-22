@@ -1,3 +1,4 @@
+jest.dontMock('lodash');
 jest.dontMock('../../src/model/weapon');
 jest.dontMock('../../src/effect/no-effect');
 
