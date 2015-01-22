@@ -97,6 +97,13 @@ describe('Player', function() {
         });
     });
 
+    describe('#calculate_impacted_damage()', function() {
+        it('should return calculated damage', function() {
+            var result = caroline.calculate_impacted_damage(10);
+            expect(result).toBe(8);
+        });
+    });
+
     describe('#attack_string()', function() {
         it('should return player vs player attack string', function() {
             var result = katherine.attack_string(stefan, {damage: 8});

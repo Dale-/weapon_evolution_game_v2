@@ -26,16 +26,25 @@ Player.prototype.isAlive = function() {
     return this.hp > 0;
 };
 
-Player.prototype.be_attacked = function(ap) {
-    this.hp -= ap;
-    return ap;
+Player.prototype.be_attacked = function(ap, attack_impact) {
+    var damage = this.calculate_impacted_damage(ap, attack_impact);
+    this.hp -= damage;
+    return damage;
 };
 
 Player.prototype.do_attack = function(defencer) {
-    var damage = defencer.be_attacked(this.getAP() - defencer.armor.dp);
+    var damage = defencer.be_attacked(this.getAP());
     return {
         damage: damage
     };
+};
+
+Player.prototype.calculate_impacted_damage = function(ap, attack_impact) {
+  var damage = this.origin_damage(ap);
+  if(attack_impact) {
+      return attack_impact.impact(damage);
+  }
+  return damage;
 };
 
 Player.prototype.attack_string = function(defender, attack_result) {
