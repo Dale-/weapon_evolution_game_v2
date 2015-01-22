@@ -9,7 +9,7 @@ describe('NoEffect', function() {
            var noEffect = new NoEffect();
            var result = noEffect.trigger();
 
-           expect(result).toEqual({});
+           expect(result.effect_string('empty')).toEqual('');
        });
    });
 });

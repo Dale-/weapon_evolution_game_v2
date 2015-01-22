@@ -30,7 +30,7 @@ describe('Weapon', function() {
            var weapon = Weapon.all()[3];
            var result = weapon.triggerEffect();
 
-           expect(result).toEqual({});
+           expect(result.effect_string('empty')).toEqual('');
        }) ;
     });
 

@@ -16,7 +16,7 @@ DeadlyAttackEffect.prototype.trigger = function() {
       },
 
       effect_string: function(name) {
-        return name + "发动了致命一击";
+        return name + '发动了致命一击';
       }
   };
 };
