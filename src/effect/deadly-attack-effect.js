@@ -1,4 +1,5 @@
 var _ = require('lodash');
+var NormalState = require('../state/normal-state');
 
 function DeadlyAttackEffect(multiple) {
   this.multiple = _.isUndefined(multiple) ? 3 : multiple;
@@ -8,6 +9,7 @@ DeadlyAttackEffect.prototype.trigger = function() {
   var multiple = this.multiple;
 
   return {
+      state: new NormalState(),
 
       is_damage: true,
 
