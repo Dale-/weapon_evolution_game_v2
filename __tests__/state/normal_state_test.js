@@ -19,7 +19,7 @@ describe('NormalState', function() {
     });
 
     describe('#expire()', function() {
-        it('should return string of 正常', function() {
+        it('should return boolean of flase', function() {
             var result = normalState.expire();
             expect(result).toBe(false);
         });
@@ -28,6 +28,15 @@ describe('NormalState', function() {
     describe('#impact()', function() {
         it('should return string of empty', function() {
             var result = normalState.impact();
+            expect(result).toBe('');
+        });
+    });
+
+    describe('#equal()', function() {
+        it('should return boolean of true', function() {
+            var State = require('../../src/state/state');
+            var state = new State();
+            var result = normalState.equal(state);
             expect(result).toBe('');
         });
     });

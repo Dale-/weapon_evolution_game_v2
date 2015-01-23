@@ -12,4 +12,8 @@ State.prototype.expire = function() {
   return this.times <= 0;
 };
 
+State.prototype.name = function() {
+    return '';
+}
+
 module.exports = State;

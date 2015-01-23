@@ -6,3 +6,4 @@ function NormalState(times) {
 
 NormalState.prototype = Object.create(State.prototoye);
 NormalState.prototype.constructor = NormalState;
+

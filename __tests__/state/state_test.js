@@ -16,4 +16,11 @@ describe('State', function() {
             expect(result).toBe(false);
         });
     });
+
+    describe('#name()', function() {
+        it('should return string of empty', function() {
+            var result = state.name();
+            expect(result).toBe('');
+        });
+    });
 });
