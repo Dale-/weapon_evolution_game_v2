@@ -1,4 +1,5 @@
 jest.dontMock('lodash');
+jest.dontMock('../../src/state/normal-state');
 jest.dontMock('../../src/effect/deadly-attack-effect');
 
 describe('DeadlyAttackEffect', function() {
@@ -21,6 +22,11 @@ describe('DeadlyAttackEffect', function() {
         it('should return number that is damagePoint', function() {
 
             expect(result.impact(3)).toBe(9);
+        });
+
+        it('should return string that is NormalState of name', function() {
+
+            expect(result.state.name()).toBe('正常');
         });
     });
 });
