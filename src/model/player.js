@@ -48,8 +48,10 @@ Player.prototype.calculate_impacted_damage = function(ap, attack_impact) {
 };
 
 Player.prototype.attack_string = function(defender, attack_result) {
-    return this.role() + this.name + '攻击了' + defender.role() +
-           defender.name + '，' + defender.armor.armor_string(defender.name) +
+    //console.log(attack_result);
+    return this.role() +
+           this.name + '攻击了' + defender.role() + defender.name + '，' +
+           defender.armor.armor_string(defender.name) +
            defender.name + '受到了' + attack_result.damage + '点伤害，' +
            defender.name + '剩余生命：' + defender.hp;
 };

@@ -52,9 +52,10 @@ describe('Soldier', function() {
             weapon.weapon_string.mockReturnValue('用Weapon');
 
             var result = katherine.attack_string(stefan, {damage: 8,
-                                                          attack_impact:{effect_string : function(name) {
-                                                                         return '';
-                                                          }}});
+                                                          attack_impact:{
+                                                              effect_string : function(name) {return '';},
+                                                              state: {impact: function(defender) {return '';}}
+                                                          }});
             expect(result).toBe('士兵Katherine用Weapon攻击了平民Stefan，Stefan受到了8点伤害，Stefan剩余生命：100');
         });
 
@@ -64,9 +65,10 @@ describe('Soldier', function() {
             weapon.weapon_string.mockReturnValue('用Weapon');
 
             var result = katherine.attack_string(damon, {damage: 8,
-                                                         attack_impact:{effect_string : function(name) {
-                                                                        return '';
-                                                        }}});
+                                                         attack_impact:{
+                                                             effect_string : function(name) {return '';},
+                                                             state: {impact: function(defender) {return '';}}
+                                                         }});
             expect(result).toBe('士兵Katherine用Weapon攻击了士兵Damon，' +
                                 'Damon用Armor防御了2点伤害，Damon受到了8点伤害，Damon剩余生命：100');
         });

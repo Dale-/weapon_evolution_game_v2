@@ -30,9 +30,10 @@ Soldier.prototype.do_attack = function(defencer) {
 };
 
 Soldier.prototype.attack_string = function(defender, attack_result) {
-    return this.role() + this.name + this.weapon.weapon_string() + '攻击了' + defender.role() + defender.name +
-           '，' + defender.armor.armor_string(defender.name) + attack_result.attack_impact.effect_string(this.name) +
-           defender.name + '受到了' + attack_result.damage + '点伤害，' + defender.name + '剩余生命：' + defender.hp;
+    return this.role() + this.name + this.weapon.weapon_string() + '攻击了' + defender.role() + defender.name + '，' +
+           defender.armor.armor_string(defender.name) + attack_result.attack_impact.effect_string(this.name) +
+           defender.name + '受到了' + attack_result.damage + '点伤害，' +
+           defender.name + '剩余生命：' + defender.hp + attack_result.attack_impact.state.impact(defender);
 };
 
 Soldier.prototype.role = function(ap) {
