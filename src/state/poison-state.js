@@ -23,7 +23,7 @@ PoisonState.prototype.impact = function(human) {
     if(this.times > 0) {
         human.hp -= this.roundDamage;
         this.reduceTimes();
-        return human.role + human.name + '受到了' + this.roundDamage + '点毒性伤害，' +
+        return human.role() + human.name + '受到了' + this.roundDamage + '点毒性伤害，' +
                human.name + '剩余生命：' + human.hp + '\n';
     } else {
         return '';
