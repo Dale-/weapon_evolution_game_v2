@@ -23,4 +23,4 @@ describe('DeadlyAttackEffect', function() {
             expect(result.impact(3)).toBe(9);
         });
     });
-})
+});
