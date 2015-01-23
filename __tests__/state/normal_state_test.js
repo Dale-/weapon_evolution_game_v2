@@ -36,8 +36,12 @@ describe('NormalState', function() {
         it('should return boolean of true', function() {
             var State = require('../../src/state/state');
             var state = new State();
+
+            state.name = jest.genMockFn();
+            state.name.mockReturnValue('正常');
+
             var result = normalState.equal(state);
-            expect(result).toBe('');
+            expect(result).toBe(true);
         });
     });
 });
