@@ -11,13 +11,9 @@ describe('State', function() {
     });
 
     describe('#expire()', function() {
-        it('should return true that point DeadlyAttackEffect has damage', function() {
-            expect(result.is_damage).toBe(true);
-        });
-
-        it('should return number that is damagePoint', function() {
-
-            expect(result.impact(3)).toBe(9);
+        it('should return true or false that show expireState', function() {
+            var result = state.expire();
+            expect(result).toBe(false);
         });
     });
 });
