@@ -1,5 +1,6 @@
 var _ = require('lodash');
 var NoArmor = require('./no-armor');
+var NormalState = require('../state/normal-state');
 
 function Player(name, hp, ap, armor) {
 
@@ -7,6 +8,7 @@ function Player(name, hp, ap, armor) {
     this.hp = _.isUndefined(hp) ? 100 : hp;
     this.ap = _.isUndefined(ap) ? 10 : ap;
     this.armor = armor ? armor : new NoArmor();
+    this.state = new NormalState();
 }
 
 Player.prototype.attack = function(player) {

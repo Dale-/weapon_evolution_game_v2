@@ -22,6 +22,7 @@ Soldier.prototype.origin_damage = function(ap) {
 
 Soldier.prototype.do_attack = function(defencer) {
     var attack_impact = this.weapon.triggerEffect();
+    defencer.state = attack_impact.state;
     var damage = defencer.be_attacked(this.getAP(), attack_impact);
     return {
         damage: damage,
