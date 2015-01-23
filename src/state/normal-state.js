@@ -1,7 +1,7 @@
 var State = require('./state');
 
-function NormalState(times) {
-    State.call(this, times);
+function NormalState(times, effectTime, damage) {
+    State.call(this, times, effectTime, damage);
 }
 
 NormalState.prototype = Object.create(State.prototype);

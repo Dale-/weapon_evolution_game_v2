@@ -1,7 +1,9 @@
 var _ = require('lodash');
 
-function State(times) {
+function State(times, effectTime, damage) {
     this.times = _.isUndefined(times) ? 1 : times;
+    this.effectTime = _.isUndefined(effectTime) ? 2 : effectTime;
+    this.damage = _.isUndefined(damage) ? 1 : damage;
 }
 
 State.prototype.equal = function(state) {
