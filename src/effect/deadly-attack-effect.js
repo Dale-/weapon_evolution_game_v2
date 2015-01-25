@@ -9,6 +9,7 @@ DeadlyAttackEffect.prototype.trigger = function() {
   var multiple = this.multiple;
 
   return {
+      
       state: new NormalState(),
 
       is_damage: true,
