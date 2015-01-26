@@ -13,7 +13,6 @@ describe('PoisonEffect', function() {
         PoisonEffect = require('../../src/effect/poison-effect');
         poisonEffect = new PoisonEffect();
         result = poisonEffect.trigger();
-        //console.log(result);
     });
 
     describe('#trigger()', function() {

@@ -22,7 +22,6 @@ describe('PoisonState', function() {
 
     describe('#merge()', function() {
         it('should return poison times', function() {
-
             var newPoisonState = new PoisonState();
             var result = poisonState.merge(newPoisonState);
             expect(poisonState.times).toBe(3);
