@@ -21,12 +21,10 @@ describe('PoisonEffect', function() {
         });
 
         it('should return string that is name 中毒了', function() {
-
             expect(result.effect_string('dale')).toBe('dale中毒了，');
         });
 
         it('should return string that is PoisonEffect of name', function() {
-
             expect(result.state.name()).toBe('毒性');
         });
     });

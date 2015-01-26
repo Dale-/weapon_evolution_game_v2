@@ -21,12 +21,10 @@ describe('FireEffect', function() {
         });
 
         it('should return string that is name 着火了', function() {
-
             expect(result.effect_string('dale')).toBe('dale着火了，');
         });
 
         it('should return string that is PoisonEffect of name', function() {
-
             expect(result.state.name()).toBe('火焰');
         });
     });
