@@ -32,6 +32,13 @@ describe('NormalState', function() {
         });
     });
 
+    describe('#merge()', function() {
+        it('should return string of 正常', function() {
+            var result = normalState.merge();
+            expect(result.name()).toBe('正常');
+        });
+    });
+
     describe('#equal()', function() {
         it('should return boolean of true', function() {
             var State = require('../../src/state/state');

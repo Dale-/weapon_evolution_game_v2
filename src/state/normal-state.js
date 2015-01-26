@@ -9,11 +9,15 @@ NormalState.prototype.constructor = NormalState;
 
 NormalState.prototype.name = function() {
     return '正常';
-}
+};
 
 NormalState.prototype.expire = function() {
     return false;
-}
+};
+
+NormalState.prototype.merge = function(newNormalState) {
+    return this;
+};
 
 NormalState.prototype.impact = function(human) {
     return '';
