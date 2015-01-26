@@ -40,7 +40,7 @@ Weapon.all = function() {
       new Weapon('晕锤', 2, [new DizzyEffect()]),
       new Weapon('火焰剑', 2, [new FireEffect(), new PoisonEffect()]),
       new Weapon('优质毒剑', 3, [new PoisonEffect(), new DeadlyAttackEffect(), new FireEffect()]),
-      new Weapon('利剑', 3, [new DeadlyAttackEffect()]),
+      new Weapon('利剑', 3, [new DeadlyAttackEffect(), new DeadlyAttackEffect(), new FireEffect(), new DizzyEffect()]),
       new Weapon('寒冰剑', 2, [])
   ];
 };
