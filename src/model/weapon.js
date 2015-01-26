@@ -1,6 +1,7 @@
 var _ = require('lodash');
 var NoEffect = require('../effect/no-effect');
 var FireEffect = require('../effect/fire-effect');
+var DizzyEffect = require('../effect/dizzy-effect');
 var PoisonEffect = require('../effect/poison-effect');
 var DeadlyAttackEffect = require('../effect/deadly-attack-effect');
 
@@ -36,7 +37,7 @@ Weapon.prototype.triggerEffect = function() {
 
 Weapon.all = function() {
   return[
-      new Weapon('晕锤', 2, []),
+      new Weapon('晕锤', 2, [new DizzyEffect()]),
       new Weapon('火焰剑', 2, [new FireEffect(), new PoisonEffect()]),
       new Weapon('优质毒剑', 3, [new PoisonEffect(), new DeadlyAttackEffect(), new FireEffect()]),
       new Weapon('利剑', 3, [new DeadlyAttackEffect()]),

@@ -12,7 +12,7 @@ DizzyState.prototype.name = function() {
 };
 
 DizzyState.prototype.merge = function(fireState) {
-    this.times ++;
+    this.times += this.effectTime;
 };
 
 DizzyState.prototype.impact = function(human) {

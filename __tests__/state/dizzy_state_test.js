@@ -24,7 +24,7 @@ describe('DizzyState', function() {
         it('should return poison times', function() {
             var newDizzyState = new DizzyState();
             var result = dizzyState.merge(newDizzyState);
-            expect(dizzyState.times).toBe(3);
+            expect(dizzyState.times).toBe(4);
         });
     });
 
