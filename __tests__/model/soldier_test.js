@@ -1,35 +1,46 @@
-jest.dontMock('../../src/model/soldier');
+jest.dontMock('lodash');
+jest.dontMock('../../src/model/armor');
+jest.dontMock('../../src/state/state');
 jest.dontMock('../../src/model/player');
 jest.dontMock('../../src/model/weapon');
-jest.dontMock('../../src/effect/no-effect');
-jest.dontMock('../../src/model/armor');
+jest.dontMock('../../src/model/soldier');
 jest.dontMock('../../src/model/no-armor');
-jest.dontMock('');
+jest.dontMock('../../src/effect/no-effect');
+jest.dontMock('../../src/state/normal-state');
+jest.dontMock('../../src/state/poison-state');
 
 describe('Soldier', function() {
 
-    var Player;
-    var Soldier;
-    var Weapon;
     var Armor;
-    var stefan;
-    var katherine;
-    var weapon;
     var armor;
     var damon;
+    var Weapon;
+    var weapon;
+    var stefan;
+    var Player;
+    var Soldier;
+    var katherine;
+    var normalState;
+    var NormalState;
+    var poisonState;
+    var PoisonState;
 
     beforeEach(function() {
 
-        Player = require('../../src/model/player');
-        Soldier = require('../../src/model/soldier');
-        Weapon = require('../../src/model/weapon');
         Armor = require('../../src/model/armor');
+        Player = require('../../src/model/player');
+        Weapon = require('../../src/model/weapon');
+        Soldier = require('../../src/model/soldier');
+        NormalState = require('../../src/state/normal-state');
+        PoisonState = require('../../src/state/poison-state');
 
         armor = new Armor('Armor', 2);
+        normalState = new NormalState();
+        poisonState = new PoisonState(1);
         weapon = new Weapon('Weapon', 2);
         stefan = new Player('Stefan', 100, 10);
-        katherine = new Soldier('Katherine', 100, 8, weapon, armor);
         damon = new Soldier('Damon', 100, 12, weapon, armor);
+        katherine = new Soldier('Katherine', 100, 8, weapon, armor);
     });
 
     describe('#getAP()', function() {
@@ -48,15 +59,19 @@ describe('Soldier', function() {
     //Soldier.prototye.deal_state = function(defencer, attack_impact) {
     describe('#deal_state', function() {
         it('should return the same state after merge', function() {
-
+            stefan.state = poisonState;
+            var result = damon.deal_state(stefan, {state: poisonState});
+            expect(result.name()).toBe('毒性');
         });
 
-        it('should return NormalState', function() {
+        it('should return newState', function() {
 
         });
 
         it('should return the origin state', function() {
-
+            stefan.state = poisonState;
+            var result = damon.deal_state(stefan, {state: normalState});
+            expect(result.times).toBe(0);
         });
     });
 

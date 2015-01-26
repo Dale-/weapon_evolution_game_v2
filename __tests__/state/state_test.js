@@ -23,4 +23,11 @@ describe('State', function() {
             expect(result).toBe('');
         });
     });
+
+    describe('#impact()', function() {
+        it('should return string of empty', function() {
+            var result = state.impact();
+            expect(result).toBe('');
+        });
+    });
 });

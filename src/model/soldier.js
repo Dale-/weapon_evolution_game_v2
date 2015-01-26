@@ -1,6 +1,8 @@
 var Player = require('./player');
 var NoArmor = require('./no-armor');
 var NoWeapon = require('./no-weapon');
+var NormalState = require('../state/normal-state');
+var PoisonState = require('../state/poison-state');
 
 function Soldier(name, hp, ap, weapon, armor) {
 
@@ -20,7 +22,7 @@ Soldier.prototype.origin_damage = function(ap) {
     return ap - this.armor.dp;
 };
 
-Soldier.prototye.deal_state = function(defencer, attack_impact) {
+Soldier.prototype.deal_state = function(defencer, attack_impact) {
 
     if (defencer.state.expire()) {
         defencer.state = new NormalState();

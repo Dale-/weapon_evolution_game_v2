@@ -25,13 +25,6 @@ describe('NormalState', function() {
         });
     });
 
-    describe('#impact()', function() {
-        it('should return string of empty', function() {
-            var result = normalState.impact();
-            expect(result).toBe('');
-        });
-    });
-
     describe('#merge()', function() {
         it('should return string of 正常', function() {
             var result = normalState.merge();

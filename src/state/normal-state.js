@@ -15,12 +15,4 @@ NormalState.prototype.expire = function() {
     return false;
 };
 
-NormalState.prototype.merge = function(newNormalState) {
-    return this;
-};
-
-NormalState.prototype.impact = function(human) {
-    return '';
-};
-
 module.exports = NormalState;
