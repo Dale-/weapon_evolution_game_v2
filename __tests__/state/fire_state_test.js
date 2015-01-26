@@ -35,7 +35,7 @@ describe('FireState', function() {
     });
 
     describe('#impact()', function() {
-        it('should return string about poison impact', function() {
+        it('should return string about fire impact', function() {
 
             var Player = require('../../src/model/player');
             var katherine = new Player('Katherine', 100, 8);
