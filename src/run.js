@@ -9,10 +9,10 @@ var Soldier = require('./model/soldier');
 
     var logger = new Logger();
     var armor = new Armor('Armor', 1);
-    var weapon = Weapon.all()[3];
-    var stefan = new Player('Stefan', 100, 10);
-    var katherine = new Soldier('Katherine', 100, 8, weapon, armor);
+    var weapon = Weapon.all()[2];
+    var stefan = new Player('Stefan', 200, 10);
+    var katherine = new Soldier('Katherine', 200, 8, weapon, armor);
 
-    var game = new Game(stefan, katherine, logger);
+    var game = new Game(katherine, stefan, logger);
     game.fight();
 })();

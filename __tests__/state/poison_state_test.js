@@ -1,6 +1,7 @@
-jest.dontMock('../../src/state/poison-state');
+jest.dontMock('lodash');
 jest.dontMock('../../src/state/state');
 jest.dontMock('../../src/model/player');
+jest.dontMock('../../src/state/poison-state');
 
 describe('PoisonState', function() {
 
@@ -22,15 +23,15 @@ describe('PoisonState', function() {
     describe('#merge()', function() {
         it('should return poison times', function() {
 
-            var newPoisonState = new PoisonState(2, 2, 2);
+            var newPoisonState = new PoisonState();
             var result = poisonState.merge(newPoisonState);
             expect(poisonState.times).toBe(3);
         });
 
         it('should return roundDamage', function() {
-            var newPoisonState = new PoisonState(2, 2, 2);
+            var newPoisonState = new PoisonState();
             var result = poisonState.merge(newPoisonState);
-            expect(poisonState.roundDamage).toBe(4);
+            expect(poisonState.roundDamage).toBe(6);
         });
     });
 

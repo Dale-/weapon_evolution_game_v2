@@ -1,26 +1,28 @@
+jest.dontMock('../../src/model/armor');
+jest.dontMock('../../src/state/state');
 jest.dontMock('../../src/model/player');
 jest.dontMock('../../src/model/soldier');
-jest.dontMock('../../src/model/armor');
 jest.dontMock('../../src/model/no-armor');
 
 describe('Player', function() {
 
-    var Player;
-    var Soldier;
+    var armor;
     var Armor;
+    var weapon;
     var Weapon;
     var stefan;
-    var katherine;
+    var Player;
+    var Soldier;
     var caroline;
-    var armor;
-    var weapon;
+    var katherine;
 
     beforeEach(function() {
 
-        Player = require('../../src/model/player');
-        Soldier = require('../../src/model/soldier');
-        Weapon = require('../../src/model/weapon');
         Armor = require('../../src/model/armor');
+        Player = require('../../src/model/player');
+        Weapon = require('../../src/model/weapon');
+        Soldier = require('../../src/model/soldier');
+
 
         armor = new Armor('Armor', 2);
         weapon = new Weapon('Weapon', 2);
@@ -36,11 +38,13 @@ describe('Player', function() {
         });
 
         it('should return player vs player attack string', function() {
+            katherine.state = {impact: function(defender) {return '';}};
             var result = katherine.attack(stefan);
             expect(result).toBe('平民Katherine攻击了平民Stefan，Stefan受到了8点伤害，Stefan剩余生命：92');
         });
 
         it('should return player vs soldier attack string', function() {
+            katherine.state = {impact: function(defender) {return '';}};
             var result = katherine.attack(caroline);
             expect(result).toBe('平民Katherine攻击了士兵Caroline，Caroline用Armor防御了2点伤害，' +
                                 'Caroline受到了6点伤害，Caroline剩余生命：94');
@@ -106,11 +110,13 @@ describe('Player', function() {
 
     describe('#attack_string()', function() {
         it('should return player vs player attack string', function() {
+            katherine.state = {impact: function(defender) {return '';}};
             var result = katherine.attack_string(stefan, {damage: 8});
             expect(result).toBe('平民Katherine攻击了平民Stefan，Stefan受到了8点伤害，Stefan剩余生命：100');
         });
 
         it('should return player vs soldier attack string', function() {
+            katherine.state = {impact: function(defender) {return '';}};
             var result = katherine.attack_string(caroline, {damage: 6});
             expect(result).toBe('平民Katherine攻击了士兵Caroline，Caroline用Armor防御了2点伤害，' +
             'Caroline受到了6点伤害，Caroline剩余生命：100');

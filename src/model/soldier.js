@@ -27,14 +27,12 @@ Soldier.prototype.deal_state = function(defencer, attack_impact) {
     if (defencer.state.expire()) {
         defencer.state = new NormalState();
     }
+
     if (defencer.state.equal(attack_impact.state)) {
         defencer.state.merge(attack_impact.state);
     } else if(attack_impact.state.name() !== '正常') {
         defencer.state = attack_impact.state;
-    } else if (attack_impact.state.name() === '正常') {
-        defencer.state.reduceTimes();
     }
-
     return defencer.state;
 };
 
@@ -49,10 +47,10 @@ Soldier.prototype.do_attack = function(defencer) {
 };
 
 Soldier.prototype.attack_string = function(defender, attack_result) {
-    return this.role() + this.name + this.weapon.weapon_string() + '攻击了' + defender.role() + defender.name + '，' +
-           defender.armor.armor_string(defender.name) + attack_result.attack_impact.effect_string(this.name) +
-           defender.name + '受到了' + attack_result.damage + '点伤害，' +
-           defender.name + '剩余生命：' + defender.hp + attack_result.attack_impact.state.impact(defender);
+    return this.role() + this.name + this.weapon.weapon_string() + '攻击了' +
+           defender.role() + defender.name + '，' + defender.armor.armor_string(defender.name) +
+           attack_result.attack_impact.effect_string(this.name) + defender.name + '受到了' +
+           attack_result.damage + '点伤害，' + defender.name + '剩余生命：' + defender.hp ;
 };
 
 Soldier.prototype.role = function(ap) {

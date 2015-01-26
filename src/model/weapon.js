@@ -1,5 +1,6 @@
 var _ = require('lodash');
 var NoEffect = require('../effect/no-effect');
+var PoisonEffect = require('../effect/poison-effect');
 var DeadlyAttackEffect = require('../effect/deadly-attack-effect');
 
 
@@ -36,7 +37,7 @@ Weapon.all = function() {
   return[
       new Weapon('晕锤', 2, []),
       new Weapon('火焰剑', 2, []),
-      new Weapon('优质毒剑', 3, []),
+      new Weapon('优质毒剑', 3, [new PoisonEffect()]),
       new Weapon('利剑', 3, [new DeadlyAttackEffect()]),
       new Weapon('寒冰剑', 2, [])
   ];

@@ -13,25 +13,21 @@ PoisonState.prototype.name = function() {
 };
 
 PoisonState.prototype.merge = function(poisonState) {
-    this.times = this.times >= 1 ? this.times + 1: (this.times + this.effectTime -1);
-    if(this.times >= (this.effectTime - 1)) {
-        this.roundDamage = 2 * this.damage;
-    }
+    this.times ++;
+    this.roundDamage = this.times * this.damage;
 };
 
 PoisonState.prototype.impact = function(human) {
-    if(this.times > 0) {
         human.hp -= this.roundDamage;
-        this.reduceTimes();
-        return human.role() + human.name + '受到了' + this.roundDamage + '点毒性伤害，' +
+        var string = human.role() + human.name + '受到了' + this.roundDamage + '点毒性伤害，' +
                human.name + '剩余生命：' + human.hp + '\n';
-    } else {
-        return '';
-    }
+        this.reduceTimes();
+        return string;
 };
 
 PoisonState.prototype.reduceTimes = function() {
-    this.times = this.times > 0 ? this.times - 1: this.times;
+    this.roundDamage = 2;
+    this.times--;
 };
 
 module.exports = PoisonState;

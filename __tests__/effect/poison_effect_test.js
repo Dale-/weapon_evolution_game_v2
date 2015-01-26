@@ -1,4 +1,5 @@
 jest.dontMock('lodash');
+jest.dontMock('../../src/state/state');
 jest.dontMock('../../src/state/poison-state');
 jest.dontMock('../../src/effect/poison-effect');
 

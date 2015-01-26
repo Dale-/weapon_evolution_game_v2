@@ -67,12 +67,6 @@ describe('Soldier', function() {
         it('should return newState', function() {
 
         });
-
-        it('should return the origin state', function() {
-            stefan.state = poisonState;
-            var result = damon.deal_state(stefan, {state: normalState});
-            expect(result.times).toBe(0);
-        });
     });
 
     describe('#attack_string()', function() {
@@ -83,8 +77,7 @@ describe('Soldier', function() {
 
             var result = katherine.attack_string(stefan, {damage: 8,
                                                           attack_impact:{
-                                                              effect_string : function(name) {return '';},
-                                                              state: {impact: function(defender) {return '';}}
+                                                              effect_string : function(name) {return '';}
                                                           }});
             expect(result).toBe('士兵Katherine用Weapon攻击了平民Stefan，Stefan受到了8点伤害，Stefan剩余生命：100');
         });
@@ -96,8 +89,7 @@ describe('Soldier', function() {
 
             var result = katherine.attack_string(damon, {damage: 8,
                                                          attack_impact:{
-                                                             effect_string : function(name) {return '';},
-                                                             state: {impact: function(defender) {return '';}}
+                                                             effect_string : function(name) {return '';}
                                                          }});
             expect(result).toBe('士兵Katherine用Weapon攻击了士兵Damon，' +
                                 'Damon用Armor防御了2点伤害，Damon受到了8点伤害，Damon剩余生命：100');
