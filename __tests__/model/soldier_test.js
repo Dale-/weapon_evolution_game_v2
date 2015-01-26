@@ -4,6 +4,7 @@ jest.dontMock('../../src/model/weapon');
 jest.dontMock('../../src/effect/no-effect');
 jest.dontMock('../../src/model/armor');
 jest.dontMock('../../src/model/no-armor');
+jest.dontMock('');
 
 describe('Soldier', function() {
 
@@ -43,6 +44,20 @@ describe('Soldier', function() {
             var result = katherine.origin_damage(10);
             expect(result).toBe(8);
         }) ;
+    });
+    //Soldier.prototye.deal_state = function(defencer, attack_impact) {
+    describe('#deal_state', function() {
+        it('should return the same state after merge', function() {
+
+        });
+
+        it('should return NormalState', function() {
+
+        });
+
+        it('should return the origin state', function() {
+
+        });
     });
 
     describe('#attack_string()', function() {
