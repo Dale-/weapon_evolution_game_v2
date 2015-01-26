@@ -3,6 +3,7 @@ var NoEffect = require('../effect/no-effect');
 var FireEffect = require('../effect/fire-effect');
 var DizzyEffect = require('../effect/dizzy-effect');
 var PoisonEffect = require('../effect/poison-effect');
+var FrozenEffect = require('../effect/frozen-effect');
 var DeadlyAttackEffect = require('../effect/deadly-attack-effect');
 
 
@@ -41,7 +42,7 @@ Weapon.all = function() {
       new Weapon('火焰剑', 2, [new FireEffect(), new PoisonEffect()]),
       new Weapon('优质毒剑', 3, [new PoisonEffect(), new DeadlyAttackEffect(), new FireEffect()]),
       new Weapon('利剑', 3, [new DeadlyAttackEffect(), new DeadlyAttackEffect(), new FireEffect(), new DizzyEffect()]),
-      new Weapon('寒冰剑', 2, [])
+      new Weapon('寒冰剑', 2, [new FrozenEffect()])
   ];
 };
 

@@ -3,7 +3,7 @@ var State = require('./state');
 
 function FrozenState(times, effectTime, damage) {
     State.call(this, times, effectTime, damage);
-    this.frozenStatus = [1];
+    this.frozenStatus = [0];
 }
 
 FrozenState.prototype = Object.create(State.prototype);
@@ -14,7 +14,7 @@ FrozenState.prototype.name = function() {
 };
 
 FrozenState.prototype.merge = function(fireState) {
-    this.frozenStatus.unshift(1);
+    this.frozenStatus.unshift(0);
 };
 
 FrozenState.prototype.impact = function(human) {

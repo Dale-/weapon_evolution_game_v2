@@ -9,7 +9,7 @@ var Soldier = require('./model/soldier');
 
     var logger = new Logger();
     var armor = new Armor('Armor', 1);
-    var weapon = Weapon.all()[3];
+    var weapon = Weapon.all()[4];
     var stefan = new Player('Stefan', 200, 10);
     var katherine = new Soldier('Katherine', 200, 8, weapon, armor);
 

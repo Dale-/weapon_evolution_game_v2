@@ -42,7 +42,7 @@ describe('FrozenState', function() {
     describe('#addTimes()', function() {
         it('should return array that has been add', function() {
             frozenState.addTimes();
-            expect(frozenState.frozenStatus[0]).toBe(2);
+            expect(frozenState.frozenStatus[0]).toBe(1);
         });
     });
 
