@@ -13,7 +13,7 @@ rewrite weapon_evolution_game
 * 只需要写核心逻辑，不需要考虑界面。
 
 输出
-```javascripte
+```javascript
 李四被打败了.
 ```
 
@@ -22,7 +22,7 @@ rewrite weapon_evolution_game
 * 每次攻击输出谁攻击了谁，被攻击的人掉了多少血，剩多少血。
 
 输出
-```javascripte
+```javascript
 张三攻击了李四,李四受到了8点伤害,李四剩余生命：12
 李四攻击了张三,张三受到了9点伤害,张三剩余生命：1
 张三攻击了李四,李四受到了8点伤害,李四剩余生命：4
