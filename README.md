@@ -1,5 +1,3 @@
-rewrite weapon_evolution_game
-
 # 第一问
 
 * 对打游戏
