@@ -1,3 +1,7 @@
+# weapon_evolution_game
+
+NodeJS + Jest
+
 ### 第一问
 
 * 对打游戏
