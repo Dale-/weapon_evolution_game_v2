@@ -17,7 +17,7 @@ describe('Armor', function() {
     });
 
     describe('#dp', function() {
-        it('should return an incoming dp', function() {
+        it('checks if returned dp equals to eight', function() {
             expect(armor.dp).toBe(8);
         });
     });
